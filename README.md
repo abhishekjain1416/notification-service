@@ -3,6 +3,10 @@
 ## Overview
 There are two microservices in this github account, the Order Service and the Notification Service, which work together to implement an event-driven architecture using Apache Kafka. The Order Service is responsible for processing and generating orders, while the Notification Service consumes events from Kafka to send notifications to users based on the orders.
 
+## Architecture
+![architecture-E-Commerce Application drawio](https://github.com/abhishekjain1416/notification-service/assets/142833334/15088697-52d9-491f-9b8b-31c6dc12adde)
+
+
 ## Prerequisites
 Before you can set up and run this system, ensure you have the kafka installed in your local system. You can use Docker Compose to define and run the necessary Docker containers for Confluent components, including Kafka, ZooKeeper.
 
