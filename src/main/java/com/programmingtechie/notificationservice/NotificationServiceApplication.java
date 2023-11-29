@@ -18,16 +18,24 @@ public class NotificationServiceApplication {
 		SpringApplication.run(NotificationServiceApplication.class, args);
 	}
 
+	/**
+	 * This method should listen for messages from the "notificationTopic" Kafka topic
+	 * @param orderPlacedEvent
+	 */
 	@KafkaListener(topics = "notificationTopic")
 	public void handleNotifications(OrderPlacedEvent orderPlacedEvent) {
 
-		// Send out an email notification
+		/**
+		 * Send out an email notification using the EmailSenderService.
+		 * Note: You may need to provide a valid email address in the first parameter.
+		 */
 		senderService.sendEmail(
 			"",
 			"Order Placed Successfullly",
 			"Your order has been placed successfully with Order ID "+orderPlacedEvent.getOrderNumber()
 		);
 
+		// Log the received notification information
 		log.info("Received notification for order - {}",orderPlacedEvent.getOrderNumber());
 	}
 }
