@@ -1,4 +1,4 @@
-package com.programmingtechie.notificationservice;
+package com.programmingtechie.notificationservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
